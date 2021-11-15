@@ -1,0 +1,41 @@
+<html>
+<head>
+<script language="javascript">
+String.prototype.select = function(...columns){
+    return this + 'select ' + columns;
+}
+String.prototype.insert = function(...columns){
+    return this + 'insert ' + columns;
+}
+String.prototype.update = function(...columns){
+    return this + 'update ' + columns;
+}
+String.prototype.delete = function(table){
+    return this + 'delete ' + table;
+}
+String.prototype.from = function(table){
+    return this + ' from ' + table;
+}
+
+function _select(...columns) {
+	return ''.select(columns);
+}
+function _insert(table) {
+	return ''.insert(table);
+}
+function _update(table) {
+	return ''.update(table);
+}
+function _delete(table) {
+	return ''.delete(table);
+}
+
+function init() {
+		alert(eval('_' + 'select("a", "b").from("c")'));
+}
+
+</script>
+</head>
+<body onload="init()">
+</body>
+</html>
