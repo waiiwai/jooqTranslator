@@ -13,3 +13,11 @@ String.prototype.delete = function(table){
 String.prototype.from = function(table){
     return this + ' from ' + table;
 }
+
+function trans() {
+    let i  = document.getElementById('inputData').value;
+    let f = '"use strict";return ("".' + i + ')';
+    let o = Function(f)();
+    document.getElementById('outputData').value = o;
+}
+
