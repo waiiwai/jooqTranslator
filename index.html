@@ -1,41 +1,11 @@
 <html>
 <head>
-<script language="javascript">
-String.prototype.select = function(...columns){
-    return this + 'select ' + columns;
-}
-String.prototype.insert = function(...columns){
-    return this + 'insert ' + columns;
-}
-String.prototype.update = function(...columns){
-    return this + 'update ' + columns;
-}
-String.prototype.delete = function(table){
-    return this + 'delete ' + table;
-}
-String.prototype.from = function(table){
-    return this + ' from ' + table;
-}
-
-function _select(...columns) {
-	return ''.select(columns);
-}
-function _insert(table) {
-	return ''.insert(table);
-}
-function _update(table) {
-	return ''.update(table);
-}
-function _delete(table) {
-	return ''.delete(table);
-}
-
-function init() {
-		alert(eval('_' + 'select("a", "b").from("c")'));
-}
-
-</script>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="./js/translate.js"></script>
 </head>
-<body onload="init()">
+<body>
+  <textarea id="inputData"  cols="50" rows="50"></textarea>
+  <input type="button" onclick="trans()" value="変換">
+  <textarea id="outputData" cols="50" rows="50"></textarea>
 </body>
 </html>
